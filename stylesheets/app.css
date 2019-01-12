@@ -808,3 +808,109 @@ header nav button {
 .three .three-2 div div span {
   margin-right: 5px;
 }
+
+/* line 178, ../sass/3-modules/modules.scss */
+.four {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 50px;
+  max-width: 950px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+/* line 188, ../sass/3-modules/modules.scss */
+.four article a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0c120c;
+}
+/* line 193, ../sass/3-modules/modules.scss */
+.four article a:hover {
+  color: #c20114;
+}
+/* line 197, ../sass/3-modules/modules.scss */
+.four article a i {
+  font-size: 1.1rem;
+}
+
+/* line 205, ../sass/3-modules/modules.scss */
+.five {
+  background: #c7d6d5;
+  margin: 0 20px;
+  display: flex;
+  flex-flow: column;
+}
+/* line 211, ../sass/3-modules/modules.scss */
+.five article {
+  display: flex;
+  margin: 30px 30px 0;
+}
+/* line 215, ../sass/3-modules/modules.scss */
+.five article div {
+  width: 30%;
+  margin-right: 20px;
+}
+/* line 218, ../sass/3-modules/modules.scss */
+.five article div a {
+  color: #0c120c;
+  text-decoration: underline;
+}
+/* line 221, ../sass/3-modules/modules.scss */
+.five article div a:hover {
+  color: #c20114;
+}
+/* line 225, ../sass/3-modules/modules.scss */
+.five article div h2 {
+  line-height: 25px;
+}
+/* line 230, ../sass/3-modules/modules.scss */
+.five article iframe {
+  width: 70%;
+  border: none;
+}
+/* line 236, ../sass/3-modules/modules.scss */
+.five .cats {
+  display: flex;
+  margin-bottom: 20px;
+}
+/* line 240, ../sass/3-modules/modules.scss */
+.five .cats article {
+  display: flex;
+  flex-direction: column;
+}
+/* line 245, ../sass/3-modules/modules.scss */
+.five .cats img {
+  max-width: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+/* line 250, ../sass/3-modules/modules.scss */
+.five .cats a {
+  color: #0c120c;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+/* line 254, ../sass/3-modules/modules.scss */
+.five .cats a:hover {
+  color: #c20114;
+}
+/* line 260, ../sass/3-modules/modules.scss */
+.five hr {
+  width: 95%;
+}
+/* line 264, ../sass/3-modules/modules.scss */
+.five button {
+  width: 120px;
+  height: 55px;
+  margin: 30px auto;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  background: #6d7275;
+  padding: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ecebf3;
+  border: 1px solid #494d50;
+}

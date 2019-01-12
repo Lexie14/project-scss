@@ -174,3 +174,103 @@ header {
 }
 
 // section four
+
+.four {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 50px;
+  // border: 1px solid red;
+  max-width: 950px;
+  margin: 50px auto;
+  padding: 0 20px;
+
+  article {
+    a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $black;
+
+      &:hover {
+        color: $red;
+      }
+
+      i {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+// section five
+.five {
+  background: $grey;
+  margin: 0 20px;
+  display: flex;
+  flex-flow: column;
+
+  article {
+    display: flex;
+    margin: 30px 30px 0;
+
+    div {
+      width: 30%;
+      margin-right: 20px;
+      a {
+        color: $black;
+        text-decoration: underline;
+        &:hover {
+          color: $red;
+        }
+      }
+      h2 {
+        line-height: 25px;
+      }
+    }
+
+    iframe {
+      width: 70%;
+      border: none;
+    }
+  }
+
+  .cats {
+    display: flex;
+    margin-bottom: 20px;
+
+    article {
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      max-width: 100%;
+      @include border-radius(5px);
+    }
+
+    a {
+      color: $black;
+      text-decoration: underline;
+      margin-top: 10px;
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  hr {
+    width: 95%;
+  }
+
+  button {
+    width: 120px;
+    height: 55px;
+    margin: 30px auto;
+    @include border-radius(5px);
+    background: $dark-grey;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $light-grey;
+    border: 1px solid #494d50;
+  }
+}
