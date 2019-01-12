@@ -914,3 +914,62 @@ header nav button {
   color: #ecebf3;
   border: 1px solid #494d50;
 }
+
+/* line 279, ../sass/3-modules/modules.scss */
+.six {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 20px;
+}
+/* line 284, ../sass/3-modules/modules.scss */
+.six .longCat {
+  padding: 0 20px;
+  display: flex;
+  background: #0c120c;
+  color: #c7d6d5;
+  align-items: center;
+  height: 100px;
+}
+/* line 293, ../sass/3-modules/modules.scss */
+.six .longCat .text {
+  width: 60%;
+  font-size: 0.8rem;
+}
+/* line 297, ../sass/3-modules/modules.scss */
+.six .longCat .catIcon {
+  width: 40%;
+  text-align: right;
+  margin-right: 50px;
+}
+/* line 304, ../sass/3-modules/modules.scss */
+.six .cats2 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 50px;
+  margin: 30px;
+}
+/* line 310, ../sass/3-modules/modules.scss */
+.six .cats2 article {
+  display: flex;
+  flex-direction: column;
+}
+/* line 314, ../sass/3-modules/modules.scss */
+.six .cats2 article a {
+  color: #0c120c;
+  text-decoration: underline;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-weight: bolder;
+}
+/* line 320, ../sass/3-modules/modules.scss */
+.six .cats2 article a:hover {
+  color: #c20114;
+}
+/* line 326, ../sass/3-modules/modules.scss */
+.six img {
+  max-width: 100%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border: 1px solid #6d7275;
+}

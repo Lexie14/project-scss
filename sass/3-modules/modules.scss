@@ -274,3 +274,58 @@ header {
     border: 1px solid #494d50;
   }
 }
+
+// section six
+.six {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 20px;
+
+  .longCat {
+    padding: 0 20px;
+    display: flex;
+    background: $black;
+    color: $grey;
+    align-items: center;
+    height: 100px;
+    // @include border-radius(5px);
+
+    .text {
+      width: 60%;
+      font-size: 0.8rem;
+    }
+    .catIcon {
+      width: 40%;
+      text-align: right;
+      margin-right: 50px;
+    }
+  }
+
+  .cats2 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+    margin: 30px;
+
+    article {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        color: $black;
+        text-decoration: underline;
+        font-size: 1.2rem;
+        margin-top: 10px;
+        font-weight: bolder;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+  img {
+    max-width: 100%;
+    @include border-radius(5px);
+    border: 1px solid $dark-grey;
+  }
+}
