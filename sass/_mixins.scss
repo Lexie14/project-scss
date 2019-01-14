@@ -3,3 +3,19 @@
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
 }
+
+$tablet-width: 768px;
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+$lg-width: 1100px;
+
+@mixin lg {
+  @media (min-width: #{$lg-width}) {
+    @content;
+  }
+}

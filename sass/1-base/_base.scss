@@ -1,5 +1,12 @@
+// html {
+//   max-width: 100%;
+// }
+* {
+  box-sizing: border-box;
+}
 body {
-  background: $light-grey;
+  background: $white;
+  max-width: 100%;
 }
 
 section {
@@ -8,11 +15,21 @@ section {
 
 a {
   text-decoration: none;
+  &:hover {
+    color: $pink !important;
+  }
 }
 
 button {
   border: none;
+}
+
+button,
+input {
   &:focus {
     outline: none;
+  }
+  &:hover {
+    background: $white;
   }
 }

@@ -1,34 +1,31 @@
 // header
+.head-wrap {
+  display: flex;
+  // border: 1px solid blue;
+  width: 950px;
+  justify-content: flex-end;
 
-header {
   nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 70%;
     font-size: 0.8rem;
+    // border: 1px solid yellow;
+    width: 70%;
 
     a {
-      color: $light-grey;
+      color: $white;
       text-decoration: none;
-      &:hover {
-        color: $red;
-      }
     }
 
     button {
-      background: $red;
+      background: $pink;
     }
   }
 }
 
 // section one
-
 .one {
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-
   .one-1 {
     display: flex;
     align-items: center;
@@ -42,7 +39,19 @@ header {
     p,
     hr {
       margin: 0;
-      color: darken($dark-grey, 10%);
+    }
+
+    hr {
+      border-color: $grey;
+    }
+
+    @include tablet {
+      margin: 20px auto;
+      font-size: 1.5rem;
+      p,
+      hr {
+        margin: 5px;
+      }
     }
   }
 
@@ -53,9 +62,9 @@ header {
     padding-left: 10px;
     border: 1px solid $black;
     @include border-radius(5px);
-
-    &:focus {
-      outline: none;
+    @include tablet {
+      width: 90%;
+      margin: 0 auto;
     }
   }
 }
@@ -68,106 +77,126 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }
 
-  a {
-    color: $dark-grey;
-    text-decoration: none;
-    &:hover {
-      color: $red;
+    @for $i from 1 through 7 {
+      .link-#{$i} {
+        color: $black + $i * 20;
+      }
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 }
 
 // section three
 .three {
-  background-image: linear-gradient(
-    110deg,
-    $light-grey 0%,
-    $grey 50%,
-    $dark-grey 50%,
-    $black 100%
-  );
-  height: 40vh;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  a {
-    color: $light-grey;
-  }
-
-  %flex-column {
-    display: flex;
-    flex-flow: column;
-    color: $light-grey;
-  }
-
-  .three-1 {
-    @extend %flex-column;
-    font-size: 1.2rem;
-    margin-left: 30px;
-
-    a {
-      margin: 10px;
-      &:hover {
-        color: $red;
-      }
-      i {
-        margin-right: 10px;
-        font-size: 0.8rem;
-      }
+  .wrap {
+    %flex-column {
+      display: flex;
+      flex-flow: column;
+      color: $white;
     }
-  }
 
-  .three-2 {
-    @extend %flex-column;
-    width: 45%;
-    padding: 0;
+    .three-1 {
+      @extend %flex-column;
+      font-size: 1.2rem;
+      margin-left: 30px;
+      max-width: 100%;
 
-    %width-height {
-      width: 300px;
-      height: 40px;
-      box-sizing: border-box;
-      margin: 0 auto;
-    }
-    p {
-      width: 300px;
-      margin: 0 auto;
-    }
-    input {
-      @extend %width-height;
-      margin-bottom: 20px;
-    }
-    button {
-      @extend %width-height;
-      background: $red;
-      color: $black;
-      @include border-radius(3px);
-      margin-bottom: 10px;
-    }
-    div {
-      width: 300px;
-      margin: 0 auto;
-      i {
-        font-size: 0.8rem;
-      }
       a {
-        display: inline;
-        &:hover {
-          color: $red;
+        color: $dark-grey;
+        margin: 10px;
+        i {
+          margin-right: 10px;
+          font-size: 0.8rem;
         }
       }
-      div {
-        display: flex;
 
-        a {
-          font-size: 0.7rem;
-          margin-right: 5px;
-          text-decoration: underline;
+      @include tablet {
+        flex-flow: row;
+        justify-content: space-around;
+        width: 90%;
+        margin: auto;
+
+        @for $i from 1 through 4 {
+          .lin-#{$i} {
+            color: lighten($white, $i * 5%);
+          }
+          // text-decoration: underline;
         }
-        span {
-          margin-right: 5px;
+      }
+    }
+
+    .three-2 {
+      @extend %flex-column;
+      width: 45%;
+      // padding: 0;
+
+      @include tablet {
+        width: 100%;
+        margin: 30px;
+      }
+
+      %width-height {
+        width: 300px;
+        height: 45px;
+        box-sizing: border-box;
+        margin: 0 auto;
+
+        @include tablet {
+          width: 100%;
+          // margin: 0 40px;
+        }
+      }
+
+      p {
+        @extend %width-height;
+        height: 30px;
+        max-width: 80%;
+      }
+
+      input {
+        @extend %width-height;
+        margin-bottom: 20px;
+        max-width: 80%;
+        box-sizing: border-box;
+        border: 1px solid black;
+      }
+
+      button {
+        @extend %width-height;
+        background: $pink;
+        color: $black;
+        @include border-radius(3px);
+        margin-bottom: 10px;
+        max-width: 80%;
+      }
+
+      article {
+        @extend %width-height;
+        max-width: 80%;
+        height: auto;
+        a {
+          color: $white;
+          i {
+            font-size: 0.8rem;
+          }
+        }
+
+        div {
+          display: flex;
+          a {
+            font-size: 0.7rem;
+            margin-right: 3px;
+            text-decoration: underline;
+            color: $white;
+          }
+
+          span {
+            margin-right: 3px;
+          }
         }
       }
     }
@@ -175,29 +204,30 @@ header {
 }
 
 // section four
-
 .four {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 30px 50px;
-  // grid-row-gap: 30px;
-  // border: 1px solid red;
-  max-width: 950px;
-  margin: 50px auto;
-  padding: 0 50px;
-
   article {
+    // border: 1px solid red;
+    padding: 5px;
+    p {
+      color: darken($grey, 10%);
+    }
+    @include tablet {
+      margin: 10px 0;
+    }
+
     a {
       font-size: 1.5rem;
       font-weight: bold;
       color: $dark-grey;
 
-      &:hover {
-        color: $red;
-      }
-
       i {
         font-size: 1.1rem;
+      }
+    }
+
+    @include tablet {
+      p {
+        margin-top: 10px;
       }
     }
   }
@@ -205,130 +235,161 @@ header {
 
 // section five
 .five {
-  background: lighten($grey, 40%);
-  margin: 0 20px;
-  display: flex;
-  flex-flow: column;
-
-  article {
+  .cats-wrap {
     display: flex;
-    margin: 30px 30px 0;
+    // border: 1px solid yellow;
+    article {
+      display: flex;
+      margin: 30px 30px 0;
+      // border: 1px solid red;
+      @include tablet {
+        flex-flow: column;
+        justify-content: center;
+        margin: 30px 20px;
+      }
 
-    div {
-      width: 30%;
-      margin-right: 20px;
+      div {
+        width: 30%;
+        margin-right: 20px;
+        a {
+          color: $black;
+          text-decoration: underline;
+        }
+        h2 {
+          line-height: 25px;
+        }
+        @include tablet {
+          order: 2;
+          width: 95%;
+          margin: auto;
+          p {
+            margin: 0;
+          }
+        }
+      }
+
+      iframe {
+        width: 70%;
+        border: none;
+
+        @include tablet {
+          order: 1;
+          width: 98%;
+          margin: auto;
+        }
+      }
+    }
+
+    .cats {
+      // border: 1px solid green;
+      margin: 0 20px;
+      @include tablet {
+        flex-direction: column;
+        padding: 0 20px;
+        // margin-bottom: 10px;
+      }
+      article {
+        // border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 10px 30px;
+        // @include tablet {
+        //   flex-direction: row;
+        //   justify-content: flex-start;
+        //   margin: 10px auto;
+        // }
+      }
+
+      img {
+        max-width: 100%;
+        border: 1px solid $grey;
+        @include border-radius(5px);
+        // @include tablet {
+        //   width: 50%;
+        //   align-self: center;
+        //   margin-right: 20px;
+        // }
+      }
+
       a {
         color: $black;
         text-decoration: underline;
-        &:hover {
-          color: $red;
+        margin-top: 10px;
+        @include tablet {
+          text-align: center;
         }
       }
-      h2 {
-        line-height: 25px;
-      }
     }
 
-    iframe {
+    hr {
       width: 70%;
-      border: none;
-    }
-  }
-
-  .cats {
-    display: flex;
-    margin-bottom: 20px;
-
-    article {
-      display: flex;
-      flex-direction: column;
+      margin: 0 auto;
     }
 
-    img {
-      max-width: 100%;
+    button {
+      width: 120px;
+      height: 55px;
+      margin: 20px auto;
       @include border-radius(5px);
+      background: $dark-grey;
+      padding: 15px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: $white;
     }
-
-    a {
-      color: $black;
-      text-decoration: underline;
-      margin-top: 10px;
-      &:hover {
-        color: $red;
-      }
-    }
-  }
-
-  hr {
-    width: 95%;
-  }
-
-  button {
-    width: 120px;
-    height: 55px;
-    margin: 30px auto;
-    @include border-radius(5px);
-    background: $dark-grey;
-    padding: 15px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: $light-grey;
-    border: 1px solid #494d50;
   }
 }
 
 // section six
 .six {
-  display: flex;
-  flex-direction: column;
-  margin: 90px 20px;
-  background: lighten($grey, 30%);
-  @include border-radius(10px);
-
   .longCat {
     background: lighten($black, 20%);
-    padding: 0 20px;
+    padding: 10px 20px;
     display: flex;
-    // background: $grey;
     color: $black;
     align-items: center;
-    height: 80px;
+    // height: 80px;
     @include border-radius(5px);
-    // border: 1px solid lighten($dark-grey, 30%);
 
     .text {
       width: 60%;
       font-size: 0.8rem;
       line-height: 15px;
-      color: darken($light-grey, 20%);
+      color: darken($white, 20%);
 
-      h3,
-      p {
-        margin: 0;
-      }
       h3 {
         text-decoration: underline;
+        margin: 10px 0;
       }
     }
+
     .catIcon {
       width: 40%;
       text-align: right;
       margin-right: 50px;
-      color: darken($light-grey, 20%);
+      color: darken($white, 20%);
+      @include tablet {
+        margin-right: 0;
+      }
     }
   }
 
   .cats2 {
-    // border: 1px solid red;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 50px;
     margin: 20px 5px;
     padding: 15px;
+    @include tablet {
+      grid-template-columns: auto;
+    }
 
     article {
       display: flex;
       flex-direction: column;
+      @include tablet {
+        margin-bottom: 30px;
+      }
 
       a {
         color: $black;
@@ -336,9 +397,6 @@ header {
         font-size: 1.2rem;
         margin-top: 10px;
         font-weight: bolder;
-        &:hover {
-          color: $red;
-        }
       }
     }
   }
@@ -350,34 +408,17 @@ header {
 }
 
 // section seven
-
-.seven {
-  background: $grey;
-  margin: 0 20px 30px;
-  padding: 10px 30px;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1rem;
-  color: lighten($black, 15%);
-  @include border-radius(5px);
-
+.contact-wrap {
+  @include tablet {
+    flex-flow: column;
+    p {
+      margin: 10px;
+    }
+  }
   .conIcons {
     font-size: 2rem;
     display: flex;
     justify-content: space-around;
     width: 300px;
   }
-}
-
-// footer
-footer {
-  display: flex;
-  margin-top: 20px;
-  background: $black;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  color: darken($light-grey, 20%);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
 }

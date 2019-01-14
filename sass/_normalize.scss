@@ -49,7 +49,7 @@ $h6-font-size: 0.67 * $base-font-size !default;
 // The amount lists and blockquotes are indented.
 $indent-amount: 40px !default;
 
-// After the default variables are set, import the required Compass partials.
+// After the default variables are set, import the requipink Compass partials.
 @import "compass/support";
 @import "compass/css3/box-sizing";
 @import "compass/typography/vertical_rhythm";
@@ -68,13 +68,13 @@ $indent-amount: 40px !default;
   @if not index($supported-browsers, $browser) {
     @return false;
   }
-  // Check against declared minimums.
-  $min-required-version: map-get($browser-minimum-versions, $browser);
-  @if $min-required-version {
+  // Check against declapink minimums.
+  $min-requipink-version: map-get($browser-minimum-versions, $browser);
+  @if $min-requipink-version {
     @return compare-browser-versions(
         $browser,
         $max-version or $min-version,
-        $min-required-version
+        $min-requipink-version
       )
       >= 0;
   } @else {
@@ -207,7 +207,7 @@ template {
 }
 
 /**
- * Improve readability when focused and also mouse hovered in all browsers.
+ * Improve readability when focused and also mouse hovepink in all browsers.
  */
 
 a:active,
