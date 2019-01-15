@@ -20,6 +20,10 @@
 
     button {
       background: $pink;
+      border: none;
+      // &:hover {
+      //   background: yellow;
+      // }
     }
   }
 }
@@ -70,7 +74,7 @@
 }
 
 // section two
-.two {
+.link-wrap {
   nav {
     height: 50px;
     width: 100%;
@@ -163,6 +167,8 @@
         max-width: 80%;
         box-sizing: border-box;
         border: 1px solid black;
+        padding-left: 10px;
+        color: $black;
       }
 
       button {
@@ -208,10 +214,9 @@
   article {
     // border: 1px solid red;
     padding: 5px;
+    margin: 10px;
     p {
       color: darken($grey, 10%);
-    }
-    @include tablet {
       margin: 10px 0;
     }
 
@@ -275,7 +280,7 @@
         @include tablet {
           order: 1;
           width: 98%;
-          margin: auto;
+          margin: 20px auto 0;
         }
       }
     }
@@ -336,6 +341,9 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       color: $white;
+      &:hover {
+        background: $pink !important;
+      }
     }
   }
 }

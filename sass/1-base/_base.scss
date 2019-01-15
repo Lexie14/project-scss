@@ -30,6 +30,6 @@ input {
     outline: none;
   }
   &:hover {
-    background: $white;
+    background: $white !important;
   }
 }
