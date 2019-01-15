@@ -2,18 +2,21 @@ header {
   background: $black;
   display: flex;
   justify-content: center;
-  // border: 1px solid red;
+
+  .head-wrap {
+    display: flex;
+    width: 950px;
+    justify-content: flex-end;
+  }
 }
 
-.one {
+.section1 {
   height: 100px;
   max-width: 950px;
   margin: 0 auto;
-  // background: lighten($grey, 20%);
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  // border: 1px solid red;
 
   @include tablet {
     flex-flow: column;
@@ -23,18 +26,18 @@ header {
   }
 }
 
-.two {
+.section2 {
   display: block;
   max-width: 950px;
   margin: 0 auto;
-  .link-wrap {
+
+  .section-wrap {
     display: flex;
   }
 }
 
-.three {
-  // border: 1px solid green;
-
+.section3 {
+  display: block;
   background-image: linear-gradient(
     110deg,
     $white 0%,
@@ -42,10 +45,8 @@ header {
     $dark-grey 50%,
     $black 100%
   );
-  display: block;
 
-  .wrap {
-    // border: 1px solid yellow;
+  .section3-wrap {
     max-width: 950px;
     margin: 0 auto;
     height: 40vh;
@@ -56,16 +57,13 @@ header {
     @include tablet {
       flex-flow: column;
       height: auto;
-      // background: $dark-grey;
       padding: 20px 0 0;
     }
   }
 }
 
-.four {
-  // border: 1px solid green;
+.section4 {
   article {
-    // border: 1px solid yellow;
   }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -75,39 +73,39 @@ header {
   padding: 20px;
 }
 
-.five {
-  // border: 1px solid red;
+.section5 {
   display: block;
   max-width: 950px;
   margin: 0 auto;
-  // border: 1px solid pink;
-  .cats-wrap {
-    @include border-radius(5px);
 
+  .section5-wrap {
+    display: flex;
     background: lighten($grey, 40%);
     margin: 0 20px;
     flex-flow: column;
-    // border: 1px solid red;
     max-width: 100%;
+    @include border-radius(5px);
   }
 }
 
-.six {
-  // border: 1px solid black;
+.section6 {
   max-width: 950px;
   margin: 0 auto;
-  .cats2-wrap {
+
+  .section6-wrap {
     flex-direction: column;
     margin: 90px 20px;
     background: lighten($grey, 30%);
     @include border-radius(10px);
   }
 }
-.seven {
+
+.section7 {
   display: block;
   max-width: 950px;
   margin: 0 auto;
-  .contact-wrap {
+
+  .section7-wrap {
     display: flex;
     background: $white;
     margin: 0 20px 30px;

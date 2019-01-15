@@ -1,16 +1,10 @@
 // header
 .head-wrap {
-  display: flex;
-  // border: 1px solid blue;
-  width: 950px;
-  justify-content: flex-end;
-
   nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 0.8rem;
-    // border: 1px solid yellow;
     width: 70%;
 
     a {
@@ -21,16 +15,14 @@
     button {
       background: $pink;
       border: none;
-      // &:hover {
-      //   background: yellow;
-      // }
     }
   }
 }
+// end of header
 
-// section one
-.one {
-  .one-1 {
+// section 1
+.section1 {
+  .section1-1 {
     display: flex;
     align-items: center;
     color: darken($dark-grey, 10%);
@@ -72,9 +64,10 @@
     }
   }
 }
+// end of section 1
 
-// section two
-.link-wrap {
+// section 2
+.section2-wrap {
   nav {
     height: 50px;
     width: 100%;
@@ -93,128 +86,129 @@
     }
   }
 }
+// end of section 2
 
-// section three
-.three {
-  .wrap {
-    %flex-column {
-      display: flex;
-      flex-flow: column;
-      color: $white;
+// section 3
+.section3 {
+  %flex-column {
+    display: flex;
+    flex-flow: column;
+    color: $white;
+  }
+
+  // section 3 subsection 1
+  .section3-1 {
+    @extend %flex-column;
+    font-size: 1.2rem;
+    margin-left: 30px;
+    max-width: 100%;
+
+    a {
+      color: $dark-grey;
+      margin: 10px;
+
+      i {
+        margin-right: 10px;
+        font-size: 0.8rem;
+      }
     }
 
-    .three-1 {
-      @extend %flex-column;
-      font-size: 1.2rem;
-      margin-left: 30px;
-      max-width: 100%;
+    @include tablet {
+      flex-flow: row;
+      justify-content: space-around;
+      width: 90%;
+      margin: auto;
+
+      @for $i from 1 through 4 {
+        .lin-#{$i} {
+          color: lighten($white, $i * 5%);
+        }
+      }
+    }
+  }
+
+  // section 3 subsection 1
+  .section3-2 {
+    @extend %flex-column;
+    width: 45%;
+
+    @include tablet {
+      width: 100%;
+      margin: 30px;
+    }
+
+    %width-height {
+      width: 300px;
+      height: 45px;
+      margin: 0 auto;
+
+      @include tablet {
+        width: 100%;
+      }
+    }
+
+    p {
+      @extend %width-height;
+      height: 30px;
+      max-width: 80%;
+    }
+
+    input {
+      @extend %width-height;
+      margin-bottom: 20px;
+      max-width: 80%;
+      border: 1px solid black;
+      padding-left: 10px;
+      color: $black;
+    }
+
+    button {
+      @extend %width-height;
+      background: $pink;
+      color: $black;
+      @include border-radius(3px);
+      margin-bottom: 10px;
+      max-width: 80%;
+    }
+
+    article {
+      @extend %width-height;
+      max-width: 80%;
+      height: auto;
 
       a {
-        color: $dark-grey;
-        margin: 10px;
+        color: $white;
+
         i {
-          margin-right: 10px;
           font-size: 0.8rem;
         }
       }
 
-      @include tablet {
-        flex-flow: row;
-        justify-content: space-around;
-        width: 90%;
-        margin: auto;
+      div {
+        display: flex;
 
-        @for $i from 1 through 4 {
-          .lin-#{$i} {
-            color: lighten($white, $i * 5%);
-          }
-          // text-decoration: underline;
-        }
-      }
-    }
-
-    .three-2 {
-      @extend %flex-column;
-      width: 45%;
-      // padding: 0;
-
-      @include tablet {
-        width: 100%;
-        margin: 30px;
-      }
-
-      %width-height {
-        width: 300px;
-        height: 45px;
-        box-sizing: border-box;
-        margin: 0 auto;
-
-        @include tablet {
-          width: 100%;
-          // margin: 0 40px;
-        }
-      }
-
-      p {
-        @extend %width-height;
-        height: 30px;
-        max-width: 80%;
-      }
-
-      input {
-        @extend %width-height;
-        margin-bottom: 20px;
-        max-width: 80%;
-        box-sizing: border-box;
-        border: 1px solid black;
-        padding-left: 10px;
-        color: $black;
-      }
-
-      button {
-        @extend %width-height;
-        background: $pink;
-        color: $black;
-        @include border-radius(3px);
-        margin-bottom: 10px;
-        max-width: 80%;
-      }
-
-      article {
-        @extend %width-height;
-        max-width: 80%;
-        height: auto;
         a {
+          font-size: 0.7rem;
+          margin-right: 3px;
+          text-decoration: underline;
           color: $white;
-          i {
-            font-size: 0.8rem;
-          }
         }
 
-        div {
-          display: flex;
-          a {
-            font-size: 0.7rem;
-            margin-right: 3px;
-            text-decoration: underline;
-            color: $white;
-          }
-
-          span {
-            margin-right: 3px;
-          }
+        span {
+          margin-right: 3px;
         }
       }
     }
   }
 }
+// end of section 3
 
 // section four
-.four {
+.section4 {
   article {
-    // border: 1px solid red;
     padding: 5px;
     margin: 10px;
+
     p {
       color: darken($grey, 10%);
       margin: 10px 0;
@@ -237,120 +231,111 @@
     }
   }
 }
+// end of section 4
 
-// section five
-.five {
-  .cats-wrap {
+// section 5
+.section5 {
+  // section 5 subsection 1
+  .section5-1 {
     display: flex;
-    // border: 1px solid yellow;
-    article {
-      display: flex;
-      margin: 30px 30px 0;
-      // border: 1px solid red;
-      @include tablet {
-        flex-flow: column;
-        justify-content: center;
-        margin: 30px 20px;
-      }
-
-      div {
-        width: 30%;
-        margin-right: 20px;
-        a {
-          color: $black;
-          text-decoration: underline;
-        }
-        h2 {
-          line-height: 25px;
-        }
-        @include tablet {
-          order: 2;
-          width: 95%;
-          margin: auto;
-          p {
-            margin: 0;
-          }
-        }
-      }
-
-      iframe {
-        width: 70%;
-        border: none;
-
-        @include tablet {
-          order: 1;
-          width: 98%;
-          margin: 20px auto 0;
-        }
-      }
+    margin: 30px 30px 0;
+    @include tablet {
+      flex-flow: column;
+      justify-content: center;
+      margin: 30px 20px;
     }
 
-    .cats {
-      // border: 1px solid green;
-      margin: 0 20px;
-      @include tablet {
-        flex-direction: column;
-        padding: 0 20px;
-        // margin-bottom: 10px;
-      }
-      article {
-        // border: 1px solid red;
-        display: flex;
-        flex-direction: column;
-        margin: 10px 10px 30px;
-        // @include tablet {
-        //   flex-direction: row;
-        //   justify-content: flex-start;
-        //   margin: 10px auto;
-        // }
-      }
-
-      img {
-        max-width: 100%;
-        border: 1px solid $grey;
-        @include border-radius(5px);
-        // @include tablet {
-        //   width: 50%;
-        //   align-self: center;
-        //   margin-right: 20px;
-        // }
-      }
+    div {
+      width: 30%;
+      margin-right: 20px;
 
       a {
         color: $black;
         text-decoration: underline;
-        margin-top: 10px;
-        @include tablet {
-          text-align: center;
+      }
+
+      h2 {
+        line-height: 25px;
+      }
+
+      @include tablet {
+        order: 2;
+        width: 95%;
+        margin: auto;
+
+        p {
+          margin: 0;
         }
       }
     }
 
-    hr {
+    iframe {
       width: 70%;
-      margin: 0 auto;
+      border: none;
+
+      @include tablet {
+        order: 1;
+        width: 98%;
+        margin: 20px auto 0;
+      }
+    }
+  }
+
+  // section 5 subsection 2
+  .section5-2 {
+    margin: 0 20px;
+    @include tablet {
+      flex-direction: column;
+      padding: 0 20px;
     }
 
-    button {
-      width: 120px;
-      height: 55px;
-      margin: 20px auto;
+    article {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 10px 30px;
+    }
+
+    img {
+      max-width: 100%;
+      border: 1px solid $grey;
       @include border-radius(5px);
-      background: $dark-grey;
-      padding: 15px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: $white;
-      &:hover {
-        background: $pink !important;
+    }
+
+    a {
+      color: $black;
+      text-decoration: underline;
+      margin-top: 10px;
+      @include tablet {
+        text-align: center;
       }
+    }
+  }
+
+  hr {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  button {
+    width: 120px;
+    height: 55px;
+    margin: 20px auto;
+    @include border-radius(5px);
+    background: $dark-grey;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $white;
+    &:hover {
+      background: $pink !important;
     }
   }
 }
 
-// section six
-.six {
-  .longCat {
+// section 6
+.section6 {
+  // section 6 subsection 1
+  .section6-1 {
     background: lighten($black, 20%);
     padding: 10px 20px;
     display: flex;
@@ -382,7 +367,8 @@
     }
   }
 
-  .cats2 {
+  // section 6 subsection 2
+  .section6-2 {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 50px;
@@ -414,19 +400,27 @@
     border: 1px solid $dark-grey;
   }
 }
+// end of section 6
 
-// section seven
-.contact-wrap {
+// section 7
+.section7-wrap {
   @include tablet {
     flex-flow: column;
     p {
       margin: 10px;
     }
   }
+
   .conIcons {
     font-size: 2rem;
     display: flex;
     justify-content: space-around;
     width: 300px;
+    i {
+      &:hover {
+        color: $pink;
+        cursor: pointer;
+      }
+    }
   }
 }
