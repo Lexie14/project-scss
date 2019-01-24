@@ -1,20 +1,46 @@
 // header
-.head-wrap {
+header {
   nav {
     display: flex;
-    justify-content: space-around;
+    width: 950px;
+    justify-content: space-between;
     align-items: center;
     font-size: 0.8rem;
-    width: 70%;
+    @include tablet {
+      padding: 10px;
+    }
+
+    .menu-bar {
+      border: none;
+      margin-left: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .head-links {
+      width: 70%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      a {
+        @include tablet {
+          visibility: hidden;
+        }
+      }
+    }
 
     a {
       color: $white;
-      text-decoration: none;
     }
 
     button {
       background: $pink;
       border: none;
+      @include tablet {
+        font-size: 1.2rem;
+        padding: 5px 10px;
+        @include border-radius(5px);
+      }
     }
   }
 }
@@ -74,6 +100,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @include tablet {
+      display: none;
+    }
 
     @for $i from 1 through 7 {
       .link-#{$i} {
