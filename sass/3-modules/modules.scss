@@ -11,9 +11,12 @@ header {
     }
 
     .menu-bar {
-      border: none;
+      visibility: hidden;
       margin-left: 1rem;
       font-size: 1.5rem;
+      @include tablet {
+        visibility: visible;
+      }
     }
 
     .head-links {
@@ -37,7 +40,7 @@ header {
       background: $pink;
       border: none;
       @include tablet {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         padding: 5px 10px;
         @include border-radius(5px);
       }
@@ -45,6 +48,51 @@ header {
   }
 }
 // end of header
+
+// side menu
+.side-menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: lighten($black, 20%);
+  overflow-x: hidden;
+  z-index: 1;
+  transition: 0.5s;
+
+  %link {
+    color: $white;
+    display: block;
+  }
+
+  .closeBtn {
+    @extend %link;
+    font-size: 28px;
+    float: right;
+    margin: 30px 20px 0;
+  }
+
+  div {
+    margin: 80px 30px 0;
+    line-height: 30px;
+    a {
+      @extend %link;
+      border: 1px solid lighten($black, 28%);
+      text-align: center;
+      padding: 3px;
+      background: lighten($black, 50%);
+      border: 1px solid lighten($black, 20%);
+      @include border-radius(4px);
+      @include even() {
+        background: lighten($black, 34%);
+        border: 1px solid lighten($black, 10%);
+      }
+    }
+  }
+}
+// end of side menu
 
 // section 1
 .section1 {

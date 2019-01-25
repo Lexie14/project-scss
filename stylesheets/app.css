@@ -643,11 +643,6 @@ header {
   justify-content: center;
 }
 
-/* line 7, ../sass/2-layout/layout.scss */
-.side-menu {
-  display: none;
-}
-
 /* line 11, ../sass/2-layout/layout.scss */
 .section1 {
   height: 100px;
@@ -793,11 +788,17 @@ header nav {
 }
 /* line 13, ../sass/3-modules/modules.scss */
 header nav .menu-bar {
-  border: none;
+  visibility: hidden;
   margin-left: 1rem;
   font-size: 1.5rem;
 }
-/* line 19, ../sass/3-modules/modules.scss */
+@media (max-width: 768px) {
+  /* line 13, ../sass/3-modules/modules.scss */
+  header nav .menu-bar {
+    visibility: visible;
+  }
+}
+/* line 22, ../sass/3-modules/modules.scss */
 header nav .head-links {
   width: 70%;
   display: flex;
@@ -805,24 +806,24 @@ header nav .head-links {
   align-items: center;
 }
 @media (max-width: 768px) {
-  /* line 25, ../sass/3-modules/modules.scss */
+  /* line 28, ../sass/3-modules/modules.scss */
   header nav .head-links a {
     visibility: hidden;
   }
 }
-/* line 32, ../sass/3-modules/modules.scss */
+/* line 35, ../sass/3-modules/modules.scss */
 header nav a {
   color: #ffffff;
 }
-/* line 36, ../sass/3-modules/modules.scss */
+/* line 39, ../sass/3-modules/modules.scss */
 header nav button {
   background: #ff5d73;
   border: none;
 }
 @media (max-width: 768px) {
-  /* line 36, ../sass/3-modules/modules.scss */
+  /* line 39, ../sass/3-modules/modules.scss */
   header nav button {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 5px 10px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -830,39 +831,85 @@ header nav button {
   }
 }
 
-/* line 51, ../sass/3-modules/modules.scss */
+/* line 53, ../sass/3-modules/modules.scss */
+.side-menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: #333333;
+  overflow-x: hidden;
+  z-index: 1;
+  transition: 0.5s;
+}
+/* line 65, ../sass/3-modules/modules.scss */
+.side-menu .closeBtn, .side-menu div a {
+  color: #ffffff;
+  display: block;
+}
+/* line 70, ../sass/3-modules/modules.scss */
+.side-menu .closeBtn {
+  font-size: 28px;
+  float: right;
+  margin: 30px 20px 0;
+}
+/* line 77, ../sass/3-modules/modules.scss */
+.side-menu div {
+  margin: 80px 30px 0;
+  line-height: 30px;
+}
+/* line 80, ../sass/3-modules/modules.scss */
+.side-menu div a {
+  border: 1px solid #474747;
+  text-align: center;
+  padding: 3px;
+  background: gray;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+/* line 24, ../sass/_mixins.scss */
+.side-menu div a:nth-child(even) {
+  background: #575757;
+  border: 1px solid #1a1a1a;
+}
+
+/* line 99, ../sass/3-modules/modules.scss */
 .section1 .section1-1 {
   display: flex;
   align-items: center;
   color: #303030;
   font-size: 1rem;
 }
-/* line 57, ../sass/3-modules/modules.scss */
+/* line 105, ../sass/3-modules/modules.scss */
 .section1 .section1-1 i {
   margin: 10px;
 }
-/* line 61, ../sass/3-modules/modules.scss */
+/* line 109, ../sass/3-modules/modules.scss */
 .section1 .section1-1 p,
 .section1 .section1-1 hr {
   margin: 0;
 }
-/* line 66, ../sass/3-modules/modules.scss */
+/* line 114, ../sass/3-modules/modules.scss */
 .section1 .section1-1 hr {
   border-color: #7c7a7a;
 }
 @media (max-width: 768px) {
-  /* line 51, ../sass/3-modules/modules.scss */
+  /* line 99, ../sass/3-modules/modules.scss */
   .section1 .section1-1 {
     margin: 20px auto;
     font-size: 1.5rem;
   }
-  /* line 73, ../sass/3-modules/modules.scss */
+  /* line 121, ../sass/3-modules/modules.scss */
   .section1 .section1-1 p,
   .section1 .section1-1 hr {
     margin: 5px;
   }
 }
-/* line 80, ../sass/3-modules/modules.scss */
+/* line 128, ../sass/3-modules/modules.scss */
 .section1 input {
   height: 40px;
   width: 300px;
@@ -874,14 +921,14 @@ header nav button {
   -moz-border-radius: 5px;
 }
 @media (max-width: 768px) {
-  /* line 80, ../sass/3-modules/modules.scss */
+  /* line 128, ../sass/3-modules/modules.scss */
   .section1 input {
     width: 90%;
     margin: 0 auto;
   }
 }
 
-/* line 97, ../sass/3-modules/modules.scss */
+/* line 145, ../sass/3-modules/modules.scss */
 .section2-wrap nav {
   height: 50px;
   width: 100%;
@@ -890,120 +937,120 @@ header nav button {
   align-items: center;
 }
 @media (max-width: 768px) {
-  /* line 97, ../sass/3-modules/modules.scss */
+  /* line 145, ../sass/3-modules/modules.scss */
   .section2-wrap nav {
     display: none;
   }
 }
-/* line 108, ../sass/3-modules/modules.scss */
+/* line 156, ../sass/3-modules/modules.scss */
 .section2-wrap nav .link-1 {
   color: #141414;
 }
-/* line 108, ../sass/3-modules/modules.scss */
+/* line 156, ../sass/3-modules/modules.scss */
 .section2-wrap nav .link-2 {
   color: #282828;
 }
-/* line 108, ../sass/3-modules/modules.scss */
+/* line 156, ../sass/3-modules/modules.scss */
 .section2-wrap nav .link-3 {
   color: #3c3c3c;
 }
-/* line 108, ../sass/3-modules/modules.scss */
+/* line 156, ../sass/3-modules/modules.scss */
 .section2-wrap nav .link-4 {
   color: #505050;
 }
-/* line 108, ../sass/3-modules/modules.scss */
+/* line 156, ../sass/3-modules/modules.scss */
 .section2-wrap nav .link-5 {
   color: #646464;
 }
-/* line 108, ../sass/3-modules/modules.scss */
+/* line 156, ../sass/3-modules/modules.scss */
 .section2-wrap nav .link-6 {
   color: #787878;
 }
-/* line 108, ../sass/3-modules/modules.scss */
+/* line 156, ../sass/3-modules/modules.scss */
 .section2-wrap nav .link-7 {
   color: #8c8c8c;
 }
-/* line 113, ../sass/3-modules/modules.scss */
+/* line 161, ../sass/3-modules/modules.scss */
 .section2-wrap nav a {
   text-decoration: none;
 }
 
-/* line 122, ../sass/3-modules/modules.scss */
+/* line 170, ../sass/3-modules/modules.scss */
 .section3 .section3-1, .section3 .section3-2 {
   display: flex;
   flex-flow: column;
   color: #ffffff;
 }
-/* line 129, ../sass/3-modules/modules.scss */
+/* line 177, ../sass/3-modules/modules.scss */
 .section3 .section3-1 {
   font-size: 1.2rem;
   margin-left: 30px;
   max-width: 100%;
 }
-/* line 135, ../sass/3-modules/modules.scss */
+/* line 183, ../sass/3-modules/modules.scss */
 .section3 .section3-1 a {
   color: #494949;
   margin: 10px;
 }
-/* line 139, ../sass/3-modules/modules.scss */
+/* line 187, ../sass/3-modules/modules.scss */
 .section3 .section3-1 a i {
   margin-right: 10px;
   font-size: 0.8rem;
 }
 @media (max-width: 768px) {
-  /* line 129, ../sass/3-modules/modules.scss */
+  /* line 177, ../sass/3-modules/modules.scss */
   .section3 .section3-1 {
     flex-flow: row;
     justify-content: space-around;
     width: 90%;
     margin: auto;
   }
-  /* line 152, ../sass/3-modules/modules.scss */
+  /* line 200, ../sass/3-modules/modules.scss */
   .section3 .section3-1 .lin-1 {
     color: white;
   }
-  /* line 152, ../sass/3-modules/modules.scss */
+  /* line 200, ../sass/3-modules/modules.scss */
   .section3 .section3-1 .lin-2 {
     color: white;
   }
-  /* line 152, ../sass/3-modules/modules.scss */
+  /* line 200, ../sass/3-modules/modules.scss */
   .section3 .section3-1 .lin-3 {
     color: white;
   }
-  /* line 152, ../sass/3-modules/modules.scss */
+  /* line 200, ../sass/3-modules/modules.scss */
   .section3 .section3-1 .lin-4 {
     color: white;
   }
 }
-/* line 160, ../sass/3-modules/modules.scss */
+/* line 208, ../sass/3-modules/modules.scss */
 .section3 .section3-2 {
   width: 45%;
 }
 @media (max-width: 768px) {
-  /* line 160, ../sass/3-modules/modules.scss */
+  /* line 208, ../sass/3-modules/modules.scss */
   .section3 .section3-2 {
     width: 100%;
     margin: 30px;
   }
 }
-/* line 169, ../sass/3-modules/modules.scss */
+/* line 217, ../sass/3-modules/modules.scss */
 .section3 .section3-2 p, .section3 .section3-2 input, .section3 .section3-2 button, .section3 .section3-2 article {
   width: 300px;
   height: 45px;
   margin: 0 auto;
 }
 @media (max-width: 768px) {
-  /* line 169, ../sass/3-modules/modules.scss */
+  /* line 217, ../sass/3-modules/modules.scss */
   .section3 .section3-2 p, .section3 .section3-2 input, .section3 .section3-2 button, .section3 .section3-2 article {
     width: 100%;
   }
 }
-/* line 179, ../sass/3-modules/modules.scss */
+/* line 227, ../sass/3-modules/modules.scss */
 .section3 .section3-2 p {
   height: 30px;
   max-width: 80%;
 }
-/* line 185, ../sass/3-modules/modules.scss */
+/* line 233, ../sass/3-modules/modules.scss */
 .section3 .section3-2 input {
   margin-bottom: 20px;
   max-width: 80%;
@@ -1011,7 +1058,7 @@ header nav button {
   padding-left: 10px;
   color: #000000;
 }
-/* line 194, ../sass/3-modules/modules.scss */
+/* line 242, ../sass/3-modules/modules.scss */
 .section3 .section3-2 button {
   background: #ff5d73;
   color: #000000;
@@ -1021,132 +1068,132 @@ header nav button {
   margin-bottom: 10px;
   max-width: 80%;
 }
-/* line 203, ../sass/3-modules/modules.scss */
+/* line 251, ../sass/3-modules/modules.scss */
 .section3 .section3-2 article {
   max-width: 80%;
   height: auto;
 }
-/* line 208, ../sass/3-modules/modules.scss */
+/* line 256, ../sass/3-modules/modules.scss */
 .section3 .section3-2 article a {
   color: #ffffff;
 }
-/* line 211, ../sass/3-modules/modules.scss */
+/* line 259, ../sass/3-modules/modules.scss */
 .section3 .section3-2 article a i {
   font-size: 0.8rem;
 }
-/* line 216, ../sass/3-modules/modules.scss */
+/* line 264, ../sass/3-modules/modules.scss */
 .section3 .section3-2 article div {
   display: flex;
 }
-/* line 219, ../sass/3-modules/modules.scss */
+/* line 267, ../sass/3-modules/modules.scss */
 .section3 .section3-2 article div a {
   font-size: 0.7rem;
   margin-right: 3px;
   text-decoration: underline;
   color: #ffffff;
 }
-/* line 226, ../sass/3-modules/modules.scss */
+/* line 274, ../sass/3-modules/modules.scss */
 .section3 .section3-2 article div span {
   margin-right: 3px;
 }
 
-/* line 237, ../sass/3-modules/modules.scss */
+/* line 285, ../sass/3-modules/modules.scss */
 .section4 article {
   padding: 5px;
   margin: 10px;
 }
-/* line 241, ../sass/3-modules/modules.scss */
+/* line 289, ../sass/3-modules/modules.scss */
 .section4 article p {
   color: #626161;
   margin: 10px 0;
 }
-/* line 246, ../sass/3-modules/modules.scss */
+/* line 294, ../sass/3-modules/modules.scss */
 .section4 article a {
   font-size: 1.5rem;
   font-weight: bold;
   color: #494949;
 }
-/* line 251, ../sass/3-modules/modules.scss */
+/* line 299, ../sass/3-modules/modules.scss */
 .section4 article a i {
   font-size: 1.1rem;
 }
 @media (max-width: 768px) {
-  /* line 257, ../sass/3-modules/modules.scss */
+  /* line 305, ../sass/3-modules/modules.scss */
   .section4 article p {
     margin-top: 10px;
   }
 }
 
-/* line 268, ../sass/3-modules/modules.scss */
+/* line 316, ../sass/3-modules/modules.scss */
 .section5 .section5-1 {
   display: flex;
   margin: 30px 30px 0;
 }
 @media (max-width: 768px) {
-  /* line 268, ../sass/3-modules/modules.scss */
+  /* line 316, ../sass/3-modules/modules.scss */
   .section5 .section5-1 {
     flex-flow: column;
     justify-content: center;
     margin: 30px 20px;
   }
 }
-/* line 277, ../sass/3-modules/modules.scss */
+/* line 325, ../sass/3-modules/modules.scss */
 .section5 .section5-1 div {
   width: 30%;
   margin-right: 20px;
 }
-/* line 281, ../sass/3-modules/modules.scss */
+/* line 329, ../sass/3-modules/modules.scss */
 .section5 .section5-1 div a {
   color: #000000;
   text-decoration: underline;
 }
-/* line 286, ../sass/3-modules/modules.scss */
+/* line 334, ../sass/3-modules/modules.scss */
 .section5 .section5-1 div h2 {
   line-height: 25px;
 }
 @media (max-width: 768px) {
-  /* line 277, ../sass/3-modules/modules.scss */
+  /* line 325, ../sass/3-modules/modules.scss */
   .section5 .section5-1 div {
     order: 2;
     width: 95%;
     margin: auto;
   }
-  /* line 295, ../sass/3-modules/modules.scss */
+  /* line 343, ../sass/3-modules/modules.scss */
   .section5 .section5-1 div p {
     margin: 0;
   }
 }
-/* line 301, ../sass/3-modules/modules.scss */
+/* line 349, ../sass/3-modules/modules.scss */
 .section5 .section5-1 iframe {
   width: 70%;
   border: none;
 }
 @media (max-width: 768px) {
-  /* line 301, ../sass/3-modules/modules.scss */
+  /* line 349, ../sass/3-modules/modules.scss */
   .section5 .section5-1 iframe {
     order: 1;
     width: 98%;
     margin: 20px auto 0;
   }
 }
-/* line 314, ../sass/3-modules/modules.scss */
+/* line 362, ../sass/3-modules/modules.scss */
 .section5 .section5-2 {
   margin: 0 20px;
 }
 @media (max-width: 768px) {
-  /* line 314, ../sass/3-modules/modules.scss */
+  /* line 362, ../sass/3-modules/modules.scss */
   .section5 .section5-2 {
     flex-direction: column;
     padding: 0 20px;
   }
 }
-/* line 321, ../sass/3-modules/modules.scss */
+/* line 369, ../sass/3-modules/modules.scss */
 .section5 .section5-2 article {
   display: flex;
   flex-direction: column;
   margin: 10px 10px 30px;
 }
-/* line 327, ../sass/3-modules/modules.scss */
+/* line 375, ../sass/3-modules/modules.scss */
 .section5 .section5-2 img {
   max-width: 100%;
   border: 1px solid #7c7a7a;
@@ -1154,24 +1201,24 @@ header nav button {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
-/* line 333, ../sass/3-modules/modules.scss */
+/* line 381, ../sass/3-modules/modules.scss */
 .section5 .section5-2 a {
   color: #000000;
   text-decoration: underline;
   margin-top: 10px;
 }
 @media (max-width: 768px) {
-  /* line 333, ../sass/3-modules/modules.scss */
+  /* line 381, ../sass/3-modules/modules.scss */
   .section5 .section5-2 a {
     text-align: center;
   }
 }
-/* line 343, ../sass/3-modules/modules.scss */
+/* line 391, ../sass/3-modules/modules.scss */
 .section5 hr {
   width: 70%;
   margin: 0 auto;
 }
-/* line 348, ../sass/3-modules/modules.scss */
+/* line 396, ../sass/3-modules/modules.scss */
 .section5 button {
   width: 120px;
   height: 55px;
@@ -1185,12 +1232,12 @@ header nav button {
   letter-spacing: 3px;
   color: #ffffff;
 }
-/* line 358, ../sass/3-modules/modules.scss */
+/* line 406, ../sass/3-modules/modules.scss */
 .section5 button:hover {
   background: #ff5d73 !important;
 }
 
-/* line 367, ../sass/3-modules/modules.scss */
+/* line 415, ../sass/3-modules/modules.scss */
 .section6 .section6-1 {
   background: #333333;
   padding: 10px 20px;
@@ -1201,19 +1248,19 @@ header nav button {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
-/* line 376, ../sass/3-modules/modules.scss */
+/* line 424, ../sass/3-modules/modules.scss */
 .section6 .section6-1 .text {
   width: 60%;
   font-size: 0.8rem;
   line-height: 15px;
   color: #cccccc;
 }
-/* line 382, ../sass/3-modules/modules.scss */
+/* line 430, ../sass/3-modules/modules.scss */
 .section6 .section6-1 .text h3 {
   text-decoration: underline;
   margin: 10px 0;
 }
-/* line 388, ../sass/3-modules/modules.scss */
+/* line 436, ../sass/3-modules/modules.scss */
 .section6 .section6-1 .catIcon {
   width: 40%;
   text-align: right;
@@ -1221,12 +1268,12 @@ header nav button {
   color: #cccccc;
 }
 @media (max-width: 768px) {
-  /* line 388, ../sass/3-modules/modules.scss */
+  /* line 436, ../sass/3-modules/modules.scss */
   .section6 .section6-1 .catIcon {
     margin-right: 0;
   }
 }
-/* line 400, ../sass/3-modules/modules.scss */
+/* line 448, ../sass/3-modules/modules.scss */
 .section6 .section6-2 {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -1235,23 +1282,23 @@ header nav button {
   padding: 15px;
 }
 @media (max-width: 768px) {
-  /* line 400, ../sass/3-modules/modules.scss */
+  /* line 448, ../sass/3-modules/modules.scss */
   .section6 .section6-2 {
     grid-template-columns: auto;
   }
 }
-/* line 410, ../sass/3-modules/modules.scss */
+/* line 458, ../sass/3-modules/modules.scss */
 .section6 .section6-2 article {
   display: flex;
   flex-direction: column;
 }
 @media (max-width: 768px) {
-  /* line 410, ../sass/3-modules/modules.scss */
+  /* line 458, ../sass/3-modules/modules.scss */
   .section6 .section6-2 article {
     margin-bottom: 30px;
   }
 }
-/* line 417, ../sass/3-modules/modules.scss */
+/* line 465, ../sass/3-modules/modules.scss */
 .section6 .section6-2 article a {
   color: #000000;
   text-decoration: underline;
@@ -1259,7 +1306,7 @@ header nav button {
   margin-top: 10px;
   font-weight: bolder;
 }
-/* line 426, ../sass/3-modules/modules.scss */
+/* line 474, ../sass/3-modules/modules.scss */
 .section6 img {
   max-width: 100%;
   border-radius: 5px;
@@ -1269,23 +1316,23 @@ header nav button {
 }
 
 @media (max-width: 768px) {
-  /* line 435, ../sass/3-modules/modules.scss */
+  /* line 483, ../sass/3-modules/modules.scss */
   .section7-wrap {
     flex-flow: column;
   }
-  /* line 438, ../sass/3-modules/modules.scss */
+  /* line 486, ../sass/3-modules/modules.scss */
   .section7-wrap p {
     margin: 10px;
   }
 }
-/* line 443, ../sass/3-modules/modules.scss */
+/* line 491, ../sass/3-modules/modules.scss */
 .section7-wrap .conIcons {
   font-size: 2rem;
   display: flex;
   justify-content: space-around;
   width: 300px;
 }
-/* line 449, ../sass/3-modules/modules.scss */
+/* line 497, ../sass/3-modules/modules.scss */
 .section7-wrap .conIcons i:hover {
   color: #ff5d73;
   cursor: pointer;
