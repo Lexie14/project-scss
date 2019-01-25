@@ -60,7 +60,7 @@ header {
   background: lighten($black, 20%);
   overflow-x: hidden;
   z-index: 1;
-  transition: 0.5s;
+  transition: 0.3s;
 
   %link {
     color: $white;
@@ -74,9 +74,14 @@ header {
     margin: 30px 20px 0;
   }
 
+  .head-links {
+    margin-top: 70px;
+  }
+
   div {
-    margin: 80px 30px 0;
+    margin: 50px 30px 0;
     line-height: 30px;
+
     a {
       @extend %link;
       border: 1px solid lighten($black, 28%);
@@ -154,12 +159,12 @@ header {
 
     @for $i from 1 through 7 {
       .link-#{$i} {
-        color: $black + $i * 20;
+        color: lighten($black, $i * 10%);
       }
-    }
 
-    a {
-      text-decoration: none;
+      a {
+        text-decoration: none;
+      }
     }
   }
 }
